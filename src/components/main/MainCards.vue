@@ -65,11 +65,11 @@ export default {
         flex-direction: row;
         gap: 25px;
         flex-wrap: wrap;
-        
+        text-align: center;
     }
 
     li {
-        width: calc((100% / 5 - 25px));
+        width: calc((100% / 5 - 20px));
         background-color: $bg-main;
         list-style-type: none;
         aspect-ratio: 3/4;

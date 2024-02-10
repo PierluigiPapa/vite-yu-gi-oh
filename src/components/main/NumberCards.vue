@@ -14,7 +14,8 @@ export default {
 
 .container-number-cards {
     background-color: black;
-    padding: 25px 20px;
+    padding: 25px 15px;
+    width: 100%;
 
     h3 {
         color: white;
