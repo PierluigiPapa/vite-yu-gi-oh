@@ -1,4 +1,5 @@
 <script>
+import axios from "axios";
 import {store} from "../../store.js"
 
 export default {
@@ -8,15 +9,28 @@ export default {
             store,
         };
     },
+    methods: {
+        getArchetype() {
+
+            axios.get(store.apiUrlArchetype)
+            .then(res => {
+                
+                store.arrayArchetype = res.data
+            })
+        }
+    },
+    mounted () {
+        this.getArchetype()
+    } 
 }
 </script>
 
 <template>
 
-<select v-model="store.selectValue" name=""  id="carta">
+<select v-model="store.selectValue" name=""  id="">
     <option 
     :value="element.archetype_name"
-    v-for="(element,index) in store.arrayArchetype"
+    v-for="(element, index) in store.arrayArchetype"
     :key="index">{{ element.archetype_name }}</option>
 </select>
     
