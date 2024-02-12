@@ -16,8 +16,8 @@ export default {
             .then(res => {
                 
                 store.arrayArchetype = res.data
-            })
-             console.log("Elemento selezionato:", this.arrayArchetype)
+                console.log("Elemento selezionato:", store.arrayArchetype)
+            })  
         }
     },
     mounted () {
@@ -29,7 +29,7 @@ export default {
 <template>
 
 <select v-model="store.selectValue" name=""  id="">
-    <option 
+    <option @change="$emit('ricerca')"
     :value="element.archetype_name"
     v-for="(element, index) in store.arrayArchetype"
     :key="index">{{ element.archetype_name }}</option>

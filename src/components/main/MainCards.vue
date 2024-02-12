@@ -24,7 +24,6 @@ export default {
 
             axios.get(store.apiUrl)
             .then(res => {
-                console.log(res.data)
                 
                 store.yugiCards = res.data.data
 
