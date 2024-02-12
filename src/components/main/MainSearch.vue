@@ -17,6 +17,7 @@ export default {
                 
                 store.arrayArchetype = res.data
             })
+             console.log("Elemento selezionato:", this.arrayArchetype)
         }
     },
     mounted () {
