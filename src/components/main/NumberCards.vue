@@ -1,12 +1,20 @@
 <script>
+import {store} from "../../store.js"
+
+
 export default {
     name: 'NumberCards',
+    data() {
+        return {
+            store,
+        };
+    },
 }
 </script>
 
 <template>
     <div class="container-number-cards">
-        <h3>Found 35 cards</h3>
+        <h3>Found {{ store.yugiCards.length }} cards</h3>
     </div>
 </template>
 

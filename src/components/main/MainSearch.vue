@@ -1,16 +1,23 @@
 <script>
+import {store} from "../../store.js"
+
 export default {
     name: 'MainSearch',
+    data() {
+        return {
+            store,
+        };
+    },
 }
 </script>
 
 <template>
 
-<select name="card" id="carta">
-    <option value="card-1">Yu-Gi-Oh</option>
-    <option value="card-2">Yu-Gi-Oh</option>
-    <option value="card-3">Yu-Gi-Oh</option>
-    <option value="card-4">Yu-Gi-Oh</option>
+<select v-model="store.selectValue" name=""  id="carta">
+    <option 
+    :value="element.archetype_name"
+    v-for="(element,index) in store.arrayArchetype"
+    :key="index">{{ element.archetype_name }}</option>
 </select>
     
 </template>
