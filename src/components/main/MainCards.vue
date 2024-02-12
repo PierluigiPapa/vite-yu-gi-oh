@@ -21,7 +21,6 @@ export default {
 
             store.loading = true
 
-
             axios.get(store.apiUrl)
             .then(res => {
                 

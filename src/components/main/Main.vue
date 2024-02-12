@@ -1,6 +1,7 @@
 <script>
 import MainSearch from './MainSearch.vue';
 import MainCards from './MainCards.vue';
+
 import { store } from '@/store';
 import axios from 'axios';
 
@@ -14,14 +15,18 @@ export default {
     methods: {
         ricerca() {
             if(store.selectValue !=="") {
-                store.apiUrl +=`&archetype=$(store.selectValue)`
-            }
-
-            axios
+                axios
+            .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&archetype=" + store.selectValue).then (response => {
+                console.log(response.data)
+                store.yugiCards = response.data.data
+            }) 
+            }else{
+                axios
             .get(store.apiUrl).then (response => {
                 console.log(response.data)
                 store.yugiCards = response.data.data
             })
+            }
         }
     },
     mounted () {

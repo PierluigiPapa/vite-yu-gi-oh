@@ -28,8 +28,8 @@ export default {
 
 <template>
 
-<select v-model="store.selectValue" name=""  id="">
-    <option @change="$emit('ricerca')"
+<select v-model="store.selectValue" @change="$emit('ricerca')" name="" id="">
+    <option
     :value="element.archetype_name"
     v-for="(element, index) in store.arrayArchetype"
     :key="index">{{ element.archetype_name }}</option>
